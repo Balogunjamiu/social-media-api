@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Welcome to Register Page</h1>
+<a href="/login">login</a>
+      <header>
+        <h1 id="welcome">WELCOME</h1>
+        <p>Kindly fill the form below</p>
+    </header>
+    <fieldset class="field">
+        <legend>Please fill in </legend>
+    <form>
+        <label for="full-name">FULL NAME (SURNAME FIRST)</label>
+        <input id="full-name" type="text" name="name" placeholder="Full-name">
+    </br>
+          <label for="address">ADDRESS</label>
+          <input id="address" type="text" name="address" placeholder="Address">
+        </br>
+        <label for="telephone" >PHONE NUMBER</label>
+        <input id="telephone" type="tel"name="telephone" placeholder="telephone">
+    </br>
+        <label>GENDER</label>
+        <select>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+    </br>
+        <label for="email" class="hidden-text">EMAIL</label>
+        <input id="email" type="email" name="email" placeholder="email">
+    </br>
+        <label for="PASSWORD" class="hidden-text">PASSWORD</label>
+        <input id="PASSWORD" type="password" name="password" placeholder="password" required>
+    </br>
+    <label for="AGE" class="hidden-text">Age</label>
+        <input id="AGE" type="number" name="age" placeholder="age" required>
+    </br>
+        <input type="submit" value="SAVE">
+        <label>
+            <input type="radio" name="REMEMBER" checked value="yes">
+            <span class="checkbox-text">Stay signed in</span>
+        </label>
+    </form>
+</fieldset>
+<div class="site"><a href="#welcome">TOP</a></div>
+    <footer>
+    <p>&copy; 2021.</p>
+</footer>    
+</body>
+</html>

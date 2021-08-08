@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <p>Welcome to interchat</p>
+        </div>
+        <div class="apply">
+            <label>login</label>
+            <form>
+                <input type="text" id="email" name="email" placeholder="email">
+                <input type="password" id="password" name="password" placeholder="password">
+                <input id="submit" type="submit">
+            </form>
+            <div class="register">
+                <a href="/register">Register</a>
+
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    const loginForm = document.querySelector('form')
+    const email = document.queryselector('#email')
+    const password = document.queryselector('#password')
+
+    loginForm.addEventListener('submit', () =>{
+        const email = email.value
+        const password = password.value
+        .post("http://localhost:3001/users/login",{email,password})
+    </script>
+</body>
+</html>
