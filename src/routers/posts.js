@@ -52,6 +52,7 @@ router.post('/posts/:id/comment', auth, async (req,res)=>{
      const _id = req.params.id
      const comment = new Comment({ 
          text:req.body.text,
+         owner:req.body.owner,
          post:_id
      })
      try{
@@ -60,7 +61,7 @@ router.post('/posts/:id/comment', auth, async (req,res)=>{
           await post.comments.push(comment)   
           post.save()
           res.send(post.comments)
-         await saveComment.save()
+         //await saveComment.save()
         // comments = await post.saveComment(comment)
         // res.send(comments)
        //await post.saveComment(comment)
@@ -72,11 +73,9 @@ router.post('/posts/:id/comment', auth, async (req,res)=>{
 router.get('/posts/:id/comments', auth , async (req, res)=>{
      const _id = req.params.id
     try{
-        //const post = await Post.findById({_id})
-        const post = await Post.find()
-         //await post.populate('comments').execPopulate()
-        console.log(post)
-         res.send(post)
+        const post = await Post.findById({_id})
+        await post.populate('comments').execPopulate()
+         res.send(post.comments)
     }catch(e){
         res.status(500).send(e)
     }

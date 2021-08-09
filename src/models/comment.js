@@ -1,5 +1,9 @@
 const mongoose = require('mongoose')
 const commentSchema = new mongoose.Schema({
+    owner:{
+        type: String,
+        trim: true
+    },
     text:{
         type: String,
         trim:true,
@@ -9,6 +13,8 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'Post'
     }
+},{
+    timestamps:true
 })
 
 commentSchema.virtual('posts', {
